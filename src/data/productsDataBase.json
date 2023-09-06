@@ -1,0 +1,110 @@
+[
+ {
+  "id": 1,
+  "name": "Almendra non pareil",
+  "price": 9700,
+  "discount": 3,
+  "category": "in-sale",
+  "description": "El precio corresponde a 1kg del producto. Podes elegir las siguientes opciones: 100gr. - $1000 , 1/2 kilo - $4.900, 1/4 kilo -$2.500",
+  "image": "almendras.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Te en hebras",
+  "price": "110",
+  "discount": "20",
+  "category": "",
+  "description": "Hierbas del oasis",
+  "image": "teHebras.jpg"
+ },
+ {
+  "id": 3,
+  "name": " Mix Desayuno",
+  "price": 1600,
+  "discount": 2,
+  "category": "in-sale",
+  "description": "El precio corresponde a 1kg del producto. Podes elegir las siguientes opciones: 1/2 kilo - $900, 1/4 kilo -$500",
+  "image": "mixDesayuno.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Mix granola",
+  "price": 2300,
+  "discount": 10,
+  "category": "in-sale",
+  "description": "El precio corresponde a 1kg del producto. Podes elegir las siguientes opciones: 1/2 kilo - $1200, 1/4 kilo -$700",
+  "image": "mixGranola.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Rocklets Arcor",
+  "price": 1500,
+  "discount": 6,
+  "category": "in-sale",
+  "description": "El precio corresponde a 1kg del producto. Podes elegir las siguientes opciones: 150gr. - $700 , 100gr - $500",
+  "image": "rocklets.jpg"
+ },
+ {
+  "id": 6,
+  "name": "Aritos frutales",
+  "price": 2100,
+  "discount": 5,
+  "category": "in-sale",
+  "description": "El precio corresponde a 1kg del producto. Podes elegir las siguientes opciones: 1/2 kilo - $1100, 1/4 kilo -$600, 100gr - $500",
+  "image": "aritosFrutales.jpg"
+ },
+ {
+  "id": 7,
+  "name": "Almohaditas rellenas",
+  "price": "2900",
+  "discount": "10",
+  "category": "",
+  "description": "Frutilla, maní, avellanas y limón.El precio corresponde a 1kg del producto. Podes elegir las siguientes opciones: 1/2 kilo - $1500, 1/4 kilo -$800, 150gr - $550",
+  "image": "almohaditasRellenas.jpg"
+ },
+ {
+  "id": 8,
+  "name": "Miel",
+  "price": 3300,
+  "discount": 10,
+  "category": "visited",
+  "description": "Miel pura de aveja",
+  "image": "miel.jpg"
+ },
+ {
+  "id": 9,
+  "name": "Pasas de uva Rubias",
+  "price": 2000,
+  "discount": 3,
+  "category": "visited",
+  "description": "Pasas de uvas rubias",
+  "image": "pasasRubias.jpg"
+ },
+ {
+  "id": 10,
+  "name": "Copoz de maíz sin azucar",
+  "price": 1900,
+  "discount": 5,
+  "category": "visited",
+  "description": "El precio corresponde a 1kg del producto. Podes elegir las siguientes opciones: 1/2 kilo - $1000, 1/4 kilo -$600, 100gr - $300",
+  "image": "maizSinAzucar.jpg"
+ },
+ {
+  "id": 11,
+  "name": " Copos de maíz con azucar",
+  "price": 1900,
+  "discount": 4,
+  "category": "visited",
+  "description": "El precio corresponde a 1kg del producto. Podes elegir las siguientes opciones: 1/2 kilo - $1000, 1/4 kilo -$600, 100gr - $300",
+  "image": "maizConAzucar.jpg"
+ },
+ {
+  "id": "12",
+  "name": "Chips de chocolate.",
+  "price": "280",
+  "discount": "",
+  "category": "in-sale",
+  "description": "El precio corresponde a 1kg del producto. Podes elegir las siguientes opciones: 1/2 kilo - $1400, 1/4 kilo -$800, 100gr - $350",
+  "image": "chipsChocolate.jpg"
+ }
+]
