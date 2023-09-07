@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require("multer");
+const authMiddleware = require("../middlewares/routes/authMiddleware");
 
 const productsController = require("../controllers/productsController.js");
 
-
+/*** Multer config  ***/
 const storage = multer.diskStorage({
     destination: function(req, file , cb){
         cb(null, "public/images/products");

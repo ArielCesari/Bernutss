@@ -2,15 +2,19 @@
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
+const pruebaMiddleware = require("./middlewares/global/pruebaMiddleware");
 
 /// ********* Express  *********
 const app = express();
 
-/// ********* Middlewares  *********
+/// ********* Middlewares globales  *********
 app.use(express.static("public"));// Necesario para los archivos estáticos en el folder /public
 app.use(methodOverride("_method"));  // Para poder usar los métodos PUT y DELETE
 app.use(express.urlencoded({ extended: false })); // Para poder recibir y manejar el body de los formularios como objetos literales
 app.use(express.json()); // Para poder recibir y manejar el body de los formularios como objetos literales
+
+/// ********* Middlewares  propios **********
+
 
 // ************ Template Engine  ************
 app.set('views', path.resolve(__dirname, 'views')); // Define la ubicación de la carpeta de las Vistas
