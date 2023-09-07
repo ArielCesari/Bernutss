@@ -2,7 +2,6 @@
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
-const pruebaMiddleware = require("./middlewares/global/pruebaMiddleware");
 
 /// ********* Express  *********
 const app = express();
