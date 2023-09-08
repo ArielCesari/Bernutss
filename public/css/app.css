@@ -233,7 +233,7 @@ hr {
 }
 
 .product-box_data i {
-  color: var(--green);
+  color: #004C22;;
   font-size: 1.8em;
   width: 35px;
   height: 35px;
@@ -383,6 +383,7 @@ hr {
   border-radius: 8px;
   border: none;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .action-button {
@@ -429,6 +430,13 @@ textarea.form-input {
   resize: vertical;
   padding: 15px;
 }
+
+.text-danger {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 
 
 

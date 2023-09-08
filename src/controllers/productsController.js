@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require("express-validator")
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
@@ -36,35 +37,50 @@ const productsController = {
 
 	store: (req, res) => {
 
-		/*Actualizo la información con el producto nuevo y lo guardamos en el  JSON */
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		/* Producto nuevo */
+		const resultValidation = validationResult(req);
+		// Si hay errores: 
+		if (resultValidation.errors.length > 0) {
+			res.render("product-create-form", {
+				// Convierto el array en Objeto literal
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
 
-		let productoNuevo = {
-			id: products[products.length - 1].id + 1,
-			name: req.body.name,
-			price: parseInt(req.body.price),
-			discount: parseInt(req.body.discount),
-			category: req.body.category,
-			description: req.body.description,
-			image: req.file ? req.file.filename : "default-image.png"
+		} else {
+
+
+			/*Actualizo la información con el producto nuevo y lo guardamos en el  JSON */
+			const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+			/* Producto nuevo */
+
+			let productoNuevo = {
+				id: products[products.length - 1].id + 1,
+				name: req.body.name,
+				price: parseInt(req.body.price),
+				discount: parseInt(req.body.discount),
+				category: req.body.category,
+				description: req.body.description,
+				image: req.file ? req.file.filename : "default-image.png"
+
+			}
+
+			products.push(productoNuevo);
+
+			/* Recovertir a JSON */
+
+			let productsJson = JSON.stringify(products, null, " ");
+
+			/* Escribir en el archivo JSON */
+
+			fs.writeFileSync(productsFilePath, productsJson)
+
+
+			res.redirect("/products")
+
 
 		}
-
-		products.push(productoNuevo);
-
-		/* Recovertir a JSON */
-
-		let productsJson = JSON.stringify(products, null, " ");
-
-		/* Escribir en el archivo JSON */
-
-		fs.writeFileSync(productsFilePath, productsJson)
-
-
-		res.redirect("/products")
-
 
 	},
 
