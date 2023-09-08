@@ -97,7 +97,18 @@ const productsController = {
 
 	update: (req, res) => {
 
-		let id = req.params.id;
+		const resultValidation = validationResult(req);
+		// Si hay errores: 
+		if (resultValidation.errors.length > 0) {
+			res.render("product-create-form", {
+				// Convierto el array en Objeto literal
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
+
+		} else {
+
+			let id = req.params.id;
 
 		/*Actualizo la información con el producto editado y lo guardamos en el  JSON */
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -138,6 +149,12 @@ const productsController = {
 
 
 		res.redirect("/products")
+
+
+
+		}
+
+		
 	},
 
 	destroy: (req, res) => {

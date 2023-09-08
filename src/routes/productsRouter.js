@@ -60,7 +60,7 @@ router.get("/detail/:id", productsController.detail)
 
 /*** EDIT ONE PRODUCT  ***/
 router.get("/edit/:id", productsController.edit);
-router.patch("/edit/:id", upload.single("productImage"), productsController.update);
+router.patch("/edit/:id", upload.single("productImage"), validations, productsController.update);
 
 /*** EDIT ONE PRODUCT  ***/
 router.delete("/delete/:id", productsController.destroy);
