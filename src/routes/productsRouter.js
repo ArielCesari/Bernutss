@@ -3,8 +3,6 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 const { body } = require("express-validator");
-
-
 const productsController = require("../controllers/productsController.js");
 
 /*** Multer config  ***/

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Registro' }) %>
+
+    <body>
+        <!-- Header -->
+        <%- include('partials/headerNavbar') %>
+            <!-- /Header -->
+
+
+
+            <div class="container products-wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="login-title">Creá tu cuenta</h2>
+                    </div>
+                    <div class="col-12">
+                        <form action="register" method="POST" enctype="multipart/form-data">
+                            <label for="">Nombre Completo</label>
+                            <input type="text" name="name" id="name"
+                                value="<%= locals.oldData ? oldData.name : null %>">
+
+                            <% if(locals.errors && errors.name) { %>
+
+                                <div class="text-danger">
+                                    <%= errors.name.msg %>
+                                </div>
+
+                                <% } %> <br>
+
+                                    <label for="">Email</label>
+                                    <input type="email" name="email" id="email"
+                                        value="<%= locals.oldData ? oldData.email : null %>">
+                                    <% if(locals.errors && errors.email) { %>
+
+                                        <div class="text-danger">
+                                            <%= errors.email.msg %>
+                                        </div>
+
+                                        <% } %>
+                    </div>
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="password"
+                        value="<%= locals.oldData ? oldData.password : null %>">
+                    <% if(locals.errors && errors.password) { %>
+
+                        <div class="text-danger">
+                            <%= errors.password.msg %>
+                        </div>
+
+                        <% } %>
+                </div><br>
+                <label for="">Imagen de perfil</label>
+                <input type="file" name="imageProfile" id="imageProfile"><br>
+                <% if(locals.errors && errors.imageProfile) { %>
+
+                    <div class="text-danger">
+                        <%= errors.imageProfile.msg %>
+                    </div>
+
+                    <% } %>
+                        <input type="submit" value="Login">
+
+                        </form>
+            </div>
+
+
+            </form>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+            </div>
+
+            </div>
+
+
+
+            <!-- footer -->
+            <%- include('partials/footer') %>
+                <!-- /footer -->
+    </body>
+
+</html>

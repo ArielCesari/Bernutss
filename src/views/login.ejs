@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Login' }) %>
+
+    <body>
+        <!-- Header -->
+        <%- include('partials/headerNavbar') %>
+            <!-- /Header -->
+
+
+           
+            <div class="container products-wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="login-title">Login</h2>
+                    </div>
+                    <div class="col-12">
+                    <form action="/user/login" method="POST" enctype="multipart/form-data">
+                        <label for="">Email</label>
+                        <input type="email" name="email" id="email"> <br>
+                        <label for="">Password</label>
+                        <input type="password" name="password" id="password"><br>
+                        <input type="submit" value="Login">
+
+                        </form>
+                    </div>
+
+
+                    </form>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- footer -->
+                <%- include('partials/footer') %>
+                    <!-- /footer -->
+    </body>
+
+</html>
