@@ -372,7 +372,7 @@ ImageProfile .login-title {
 
 .small {
   font-size: 1.8em;
-  color: var(--green);
+  color:#004C22;
 }
 
 .small span {
@@ -391,7 +391,7 @@ ImageProfile .login-title {
 }
 
 .actions-list i {
-  color: var(--green);
+  color:#004C22;
   font-size: 2em;
   margin-right: 15px;
 }
@@ -403,7 +403,7 @@ ImageProfile .login-title {
 }
 
 .buy-now-button {
-  background-color: var(--light-blue);
+  background-color:#024922;
   font-size: 1.6em;
   color: #ffffff;
   display: flex;
@@ -429,7 +429,7 @@ ImageProfile .login-title {
 }
 
 .action-button.edit {
-  background-color: chocolate;
+  background-color: rgb(190, 205, 50);
 }
 
 .action-button.delete {
