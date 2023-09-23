@@ -1,1 +1,9 @@
-[]
+[
+ {
+  "id": 1,
+  "name": "Ariel",
+  "email": "ariel.dcesari@gmail.com",
+  "password": "$2a$10$l7hx7j0piyn0YkbgVVNrAO/kEtUgpA0r9x19.5MYT9j93KiEAQobO",
+  "avatar": "imageProfile-1695478442169.jpg"
+ }
+]

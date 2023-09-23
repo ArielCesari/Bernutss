@@ -8,71 +8,85 @@
         <%- include('partials/headerNavbar') %>
             <!-- /Header -->
 
+<!-- Register-Form -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h2>Formulario de registro</h2>
 
-
-            <div class="container products-wrapper">
+            <form method="POST" action="/users/register" enctype="multipart/form-data">
                 <div class="row">
-                    <div class="col-12">
-                        <h2 class="login-title">Creá tu cuenta</h2>
-                    </div>
-                    <div class="col-12">
-                        <form action="register" method="POST" enctype="multipart/form-data">
-                            <label for="">Nombre Completo</label>
-                            <input type="text" name="name" id="name"
-                                value="<%= locals.oldData ? oldData.name : null %>">
-
-                            <% if(locals.errors && errors.name) { %>
-
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Nombre completo:</b></label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.name : null %>"
+                            >
+                            <% if (locals.errors && errors.name) { %>
                                 <div class="text-danger">
-                                    <%= errors.name.msg %>
+                                    <%= errors.name.msg %> 
                                 </div>
-
-                                <% } %> <br>
-
-                                    <label for="">Email</label>
-                                    <input type="email" name="email" id="email"
-                                        value="<%= locals.oldData ? oldData.email : null %>">
-                                    <% if(locals.errors && errors.email) { %>
-
-                                        <div class="text-danger">
-                                            <%= errors.email.msg %>
-                                        </div>
-
-                                        <% } %>
-                    </div>
-                    <label for="">Password</label>
-                    <input type="password" name="password" id="password"
-                        value="<%= locals.oldData ? oldData.password : null %>">
-                    <% if(locals.errors && errors.password) { %>
-
-                        <div class="text-danger">
-                            <%= errors.password.msg %>
+                            <% } %>
                         </div>
-
-                        <% } %>
-                </div><br>
-                <label for="">Imagen de perfil</label>
-                <input type="file" name="imageProfile" id="imageProfile"><br>
-                <% if(locals.errors && errors.imageProfile) { %>
-
-                    <div class="text-danger">
-                        <%= errors.imageProfile.msg %>
                     </div>
-
-                    <% } %>
-                        <input type="submit" value="Login">
-
-                        </form>
-            </div>
-
-
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Correo electrónico:</b></label>
+                            <input 
+                                type="text" 
+                                name="email" 
+                                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.email : null %>"
+                            >
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Password:</b></label>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="text-danger">
+                                    <%= errors.password.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Imagen de perfil:</b></label>
+                            <input 
+                                type="file" 
+                                name="imageProfile"
+                                class="form-control <%= locals.errors && errors.imageProfile ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.imageProfile) { %>
+                                <div class="text-danger">
+                                    <%= errors.imageProfile.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-12 my-3">
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </div>
+                </div>
             </form>
-
-            <div class="col-12 col-sm-6 col-lg-3">
-
-            </div>
-
-            </div>
+        </div>
+    </div>
+</div>
+<!-- //Register-Form -->
 
 
 

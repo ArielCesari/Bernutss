@@ -65,11 +65,12 @@ const Users = {
             id: this.generateID(),
             ...userData
         }
+        
         /* Agregamos el usuario en la base de datos */
         allUsers.push(newUser)
         /* Escribimos y  lo transformamos en JSON */
         fs.writeFileSync(this.filename, JSON.stringify(allUsers, null, " "));
-        return true
+        return newUser
 
     },
     delete: function (id) {

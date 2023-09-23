@@ -10,11 +10,15 @@ const session = require("express-session");
 const app = express();
 
 /// ********* Middlewares globales.  *********
+app.use(session({
+    secret: "Shhh, It's a secret",
+    resave: false,
+    saveUninitialized: false,
+})); // Instalo session en toda la aplicación.
 app.use(express.static("public"));// Necesario para los archivos estáticos en el folder /public.
 app.use(methodOverride("_method"));  // Para poder usar los métodos PUT y DELETE.
 app.use(express.urlencoded({ extended: false })); // Para poder recibir y manejar el body de los formularios como objetos literales.
 app.use(express.json()); // Para poder recibir y manejar el body de los formularios como objetos literales.
-app.use(session({secret: "secret"})); // Instalo session en toda la aplicación.
 
 
 /// ********* Middlewares  propios. **********
@@ -32,7 +36,7 @@ const userRouter = require("./routes/userRouter.js");
 
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
-app.use('/users',userRouter);
+app.use('/users', userRouter);
 
 
 // ************ Set the server to listen. ************

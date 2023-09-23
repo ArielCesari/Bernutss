@@ -9,37 +9,53 @@
             <!-- /Header -->
 
 
-           
-            <div class="container products-wrapper">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="login-title">Login</h2>
-                    </div>
-                    <div class="col-12">
-                    <form action="/user/login" method="POST" enctype="multipart/form-data">
-                        <label for="">Email</label>
-                        <input type="email" name="email" id="email"> <br>
-                        <label for="">Password</label>
-                        <input type="password" name="password" id="password"><br>
-                        <input type="submit" value="Login">
 
-                        </form>
-                    </div>
-
-
-                    </form>
-
-                    <div class="col-12 col-sm-6 col-lg-3">
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- footer -->
-                <%- include('partials/footer') %>
-                    <!-- /footer -->
+            <!-- Login-Form -->
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<h2>Formulario de Login</h2>
+	
+				<form method="POST" action="/users/login">
+					<div class="row">
+						<div class="col-md-6 my-2">
+							<div class="form-group">
+								<label><b>Correo electrónico:</b></label>
+								<input type="text" name="email" class="form-control">
+								<% if (locals.errors && errors.email) { %>
+									<div class="text-danger">
+										<%= errors.email.msg %>
+									</div>
+								<% } %>
+							</div>
+						</div>
+						<div class="col-md-6 my-2">
+							<div class="form-group">
+								<label><b>Password:</b></label>
+								<input type="password" name="password" class="form-control">
+								<div class="invalid-feedback">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 my-2">
+							<div class="form-group form-check">
+								<label class="form-check-label">
+									<input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
+								</label>
+							</div>
+						</div>
+						<div class="col-12 my-3">
+							<button type="submit" class="btn btn-primary">Loguearme</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //Login-Form -->
+            <!-- footer -->
+            <%- include('partials/footer') %>
+                <!-- /footer -->
     </body>
 
 </html>
