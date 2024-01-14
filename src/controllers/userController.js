@@ -1,7 +1,7 @@
 const { validationResult } = require("express-validator");
 
 const bcryptjs = require("bcryptjs");
-const Users = require("../models/User")
+const Users = require("../modelo/User")
 
 const userController = {
 
